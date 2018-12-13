@@ -150,6 +150,12 @@ function Berserker () {
 	}
 }
 Berserker.prototype = new Perso;
+function Monster () {
+	this.getm = function(){
+		this.firstName = this.firstName[hasard(0,22)];
+	}
+}
+Monster.prototype = new Perso;
 
 var Bill = new Mage();
 	Bill.firstName = "Bill";
@@ -198,6 +204,18 @@ var Ruby = new Berserker();
 	Ruby.damage = 15;
 	Ruby.exp = 0;
 	Ruby.level = 1;
+
+var Rick = new Monster();
+	Rick.firstName = ["Slime", "Gobelin","Squelette","Armure_Maudite","Hogobelin","Ogre","Troll","Lamia","Succube","Lord","Dalek","Sith","Joker","Thanos","Magicarpe","Bowser","Bowsette","Sauron","Rick","Gozilla","King_Kong","Ganon"];
+	Rick.lastName = ["de bois", "de pierre", "de fer", "d'acier", "de bronze", "d'argent", "d'or", "de platine", "de diamant"];
+	Rick.classNumber = 0;
+	Rick.health = 100;
+	Rick.healthMax = 100;
+	Rick.mana = 50;
+	Rick.manaMax = 50;
+	Rick.damage = 15;
+	Rick.exp = 0;
+	Rick.level = 1;
 
 
 
@@ -354,7 +372,7 @@ Ruby.exp += 100;
 console.log(Ruby.levelUp());
 console.log(Ruby.soin());
 while (Ruby.health > 0 && Tom.health > 0) {
-  console.log(Ruby.coup(Tom))
-  console.log(Tom.coup(Ruby))
+  console.log(Ruby.coup(Tom));
+  console.log(Tom.coup(Ruby));
 }
-console.log(Ruby.victory())
+console.log(Tom.victory());
